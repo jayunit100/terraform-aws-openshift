@@ -143,7 +143,11 @@ OpenShift 3.5 is fully tested, and has a slightly different setup. You can build
 
 Bring everything down with:
 
-```
+``` 
+# This seems to get skipped when destroy runs , do it first.
+aws iam delete-instance-profile --instance-profile-name openshift-instance-profile
+
+# All other resources will be brought down via destroy..
 terraform destroy
 ```
 
